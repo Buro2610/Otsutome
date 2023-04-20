@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.3"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-# コメントアウト gem "sqlite3", "~> 1.4"
+# gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -51,8 +51,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  #以下の一文と下の3文を追加
-  gem 'sqlite3', '~> 1.4'
+
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
@@ -68,12 +67,13 @@ group :development do
   # gem "spring"
 end
 
-#以下の3文を追加
-group :production do
-  gem "pg", "~> 1.4"
+group :development, :test do
+  gem 'sqlite3' #do ~ end内部に追加。他のgemは残してください。
 end
 
-
+group :production do
+  gem 'pg'
+end
 
 
 group :test do
