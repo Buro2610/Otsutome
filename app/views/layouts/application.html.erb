@@ -18,7 +18,10 @@
         <%= link_to "Otsutomeとは","/about"%>
         </li>
         <li>
-          <%= link_to "ユーザー一覧","/users"%>
+          <%= link_to "新規登録","/signup"%>
+        </li>
+        <li>
+          <%= link_to "ユーザー一覧","users/index"%>
         </li>
         <li>
           <%= link_to "カレンダー","/about"%>
@@ -40,6 +43,14 @@
         </li>
       </ul>
     </header>
+     <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+
+
     <%= yield %>
   </body>
 </html>
