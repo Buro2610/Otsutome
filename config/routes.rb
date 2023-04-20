@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  get "users" => "users#index"
+  get 'exception/Unimplented'
+  post "users/create" => "users#create"
+  get "signup" => "users#new"
 
+  get "users/index" => "users#index"
+  get "users/:id" => "users#show"
 
   get 'posts/index'
+  get "users/create" => "users#create"
 
 
   get "/" => "home#top"
