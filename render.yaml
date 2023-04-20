@@ -1,12 +1,12 @@
 databases:
   - name: Otsutome
     databaseName: otsutome_db
-    user: Otsutome...
+    user: Otsutome..
     region: singapore
 
 services:
   - type: web
-    name: Otsutome...
+    name: Otsutome..
     env: ruby
     region: singapore
     plan: free
